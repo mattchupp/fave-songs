@@ -3,7 +3,9 @@ const cors = require('cors')
 const router = express.Router()
 const Song = require('../models/Song')
 
+
 // Get all Songs
+// route /api/v1/songs
 router.get('/', cors(), async (req, res) => {
   try {
     const songs = await Song.find()
@@ -15,26 +17,32 @@ router.get('/', cors(), async (req, res) => {
 
 
 // Get single ticket
+// route -> /api/v1/songs/:id
 router.get('/:id', getSong, (req, res) => {
   res.send(res.song)
 })
 
-/*
-// Create new ticket
+
+// Create new song
 router.post('/', async (req, res) => {
-  const ticket = new Ticket ({
-    ticket_title: req.body.ticket_title,
-    ticket_description: req.body.ticket_description,
-    ticket_creator: req.body.ticket_creator,
+  const song = new Song ({
+    title: req.body.title,
+    artist: req.body.artist,
+    album: req.body.album,
+    year_released: req.body.year_released,
+    good_for: req.body.good_for, 
+    genre: req.body.genre
   })
 
   try {
-    const newTicket = await ticket.save()
-    res.status(201).json(newTicket)
+    const newSong = await song.save()
+    res.status(201).json(newSong)
   } catch(err) {
     res.status(400).json({ message: err.message })
   }
 })
+
+/*
 
 // Updating a ticket
 router.patch('/:id', getTicket, async (req, res) => {
