@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const mongoose = require('mongoose');
 
-const port = 4000;
+const port = 5000;
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`))
 
 /*
@@ -24,5 +24,5 @@ const db = mongoose.connection
 /*
  * Set up route for api calls
 */
-const ticketsRouter = require('./routes/tickets')
-app.use('/tickets', ticketsRouter)
+const songsRouter = require('./routes/songs')
+app.use('/api/v1/songs', songsRouter)
