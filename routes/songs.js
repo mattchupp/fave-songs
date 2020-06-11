@@ -42,48 +42,57 @@ router.post('/', async (req, res) => {
   }
 })
 
-/*
+
 
 // Updating a ticket
-router.patch('/:id', getTicket, async (req, res) => {
-  if (req.body.ticket_title != null) {
-    res.ticket.ticket_title = req.body.ticket_title
+router.patch('/:id', getSong, async (req, res) => {
+  if (req.body.title != null) {
+    res.song.title = req.body.title
   }
-  if (req.body.ticket_description != null) {
-    res.ticket.ticket_description = req.body.ticket_description
+  if (req.body.artist != null) {
+    res.song.artist = req.body.artist
   }
-  if (req.body.ticket_creator != null) {
-    res.ticket.ticket_creator = req.body.ticket_creator
+  if (req.body.album != null) {
+    res.song.album = req.body.album
   }
-  if (req.body.ticket_owner != null) {
-    res.ticket.ticket_owner = req.body.ticket_owner
+  if (req.body.year_released != null) {
+    res.song.year_released = req.body.year_released
   }
-  if (req.body.ticket_status != null){
-    res.ticket.ticket_status = req.body.ticket_status
+  if (req.body.good_for != null){
+    res.song.good_for = req.body.good_for
   }
-  if (req.body.date_created != null){
-    res.ticket.date_created = req.body.date_created
+  if (req.body.genre != null){
+    res.song.genre = req.body.genre
+  }
+  // !** needs work **!
+  if (req.body.links.spotify != null) {
+    res.song.links.spotify = req.body.links.spotify
+  }
+  // !** needs work **!
+  if (req.body.links.apple_music != null) {
+    res.song.links.apple_music = req.body.links.apple_music
   }
 
   try {
-    const updatedTicket = await res.ticket.save()
-    res.json(updatedTicket)
+    const updatedSong = await res.song.save()
+    res.json(updatedSong)
   } catch (err) {
     res.status(400).json({ message: err.message })
   }
 })
 
+
 // Deleting a ticket
-router.delete('/:id', getTicket, async (req, res) => {
+router.delete('/:id', getSong, async (req, res) => {
   try {
-    await res.ticket.remove()
-    res.json({ message: 'Deleted ticket'})
+    await res.song.remove()
+    res.json({ message: 'Deleted Song'})
   } catch(err) {
     res.status(500).json({ message: err.message })
   }
 })
 
-*/
+
 
 // Middleware function
 async function getSong(req, res, next) {

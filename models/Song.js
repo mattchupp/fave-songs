@@ -24,6 +24,16 @@ const songSchema = new mongoose.Schema({
   genre: {
     type: String,
     default: null
+  },
+  links: {
+    spotify: {
+      type: String, 
+      default: null
+    },
+    apple_music: {
+      type: String, 
+      default: null
+    }
   }
 
 })
