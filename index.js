@@ -23,6 +23,7 @@ const db = mongoose.connection
 
 /*
  * Set up route for api calls
+ * route is /api/v1/songs
 */
 const songsRouter = require('./routes/songs')
 app.use('/api/v1/songs', songsRouter)
