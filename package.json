@@ -1,5 +1,5 @@
 {
-  "name": "Favorite Songs API",
+  "name": "fave-songs",
   "version": "1.0.0",
   "description": "RESTful api with my favorite songs",
   "main": "index.js",
