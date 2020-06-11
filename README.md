@@ -1,19 +1,55 @@
-# Rest API with Express
+# Favorite Songs
 
-**Still working on documentation**
+*I love music. This is for collecting my favorite songs.*
+This is a RESTful api that returns a collection of my favorite songs and some details about them in JSON. 
 
-This is my simple rest api written in express pulling from mongodb
-The goal is to make this more generic so I can just grab it, change some endpoints, add a db connection to .env and get to work.
+## Schema
+The only requirements are Title and Artist
 
-A template for me and maybe you.
-
-## Getting started
-Clone this and ``` npm start ``` to get going.
-
-## Endpoints
-Endpoints live in the routes directory. Just add
-```javascript
-  const exampleRouter = require('./routes/example')
-  app.use('/example', exampleRouter)
 ```
-to index.js to use /example as the endpoint using ./routes/example to handle requests
+{
+  title: {
+    type: String,
+    required: true
+  },
+  artist: {
+    type: String,
+    required: true
+  },
+  album: {
+    type: String,
+    default: null
+  },
+  year_released: {
+    type: String,
+    default: null
+  },
+  good_for: {
+    type: String,
+    default: null
+  },
+  genre: {
+    type: String,
+    default: null
+  },
+  spotify_link: {
+    type: String, 
+    default: null
+  },
+  apple_music_link: {
+    type: String, 
+    default: null
+  }
+}
+```
+
+## Starting
+**With Node**
+Clone ```bash npm install ``` and ```bash node index.js ``` from working directory
+
+**With Docker**
+Clone and navigate to directory. 
+```bash docker build -t [name] .``` to build
+```bash docker run --name [name] -p 5000:5000 -d [name]:latest```
+
+
