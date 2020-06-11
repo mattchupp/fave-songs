@@ -52,10 +52,12 @@ Clone ```bash npm install ``` and ```bash node index.js ``` from working directo
 ### With Docker
 Clone and navigate to directory.
 
-Build
+**Build**
+
 ```bash docker build -t [name] .``` 
 
-Run
+**Run**
+
 ```bash docker run --name [name] -p 5000:5000 -d [name]:latest```
 
 
