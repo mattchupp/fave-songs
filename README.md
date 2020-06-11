@@ -1,6 +1,7 @@
 # Favorite Songs
 
 *I love music. This is for collecting my favorite songs.*
+
 This is a RESTful api that returns a collection of my favorite songs and some details about them in JSON. 
 
 ## Schema
@@ -43,13 +44,18 @@ The only requirements are Title and Artist
 }
 ```
 
-## Starting
-**With Node**
+## Getting Started
+
+### With Node
 Clone ```bash npm install ``` and ```bash node index.js ``` from working directory
 
-**With Docker**
-Clone and navigate to directory. 
-```bash docker build -t [name] .``` to build
+### With Docker
+Clone and navigate to directory.
+
+Build
+```bash docker build -t [name] .``` 
+
+Run
 ```bash docker run --name [name] -p 5000:5000 -d [name]:latest```
 
 
