@@ -31,7 +31,9 @@ router.post('/', async (req, res) => {
     album: req.body.album,
     year_released: req.body.year_released,
     good_for: req.body.good_for, 
-    genre: req.body.genre
+    genre: req.body.genre,
+    spotify_link: req.body.spotify_link,
+    apple_music_link: req.body.apple_music_link
   })
 
   try {
@@ -65,12 +67,12 @@ router.patch('/:id', getSong, async (req, res) => {
     res.song.genre = req.body.genre
   }
   // !** needs work **!
-  if (req.body.links.spotify != null) {
-    res.song.links.spotify = req.body.links.spotify
+  if (req.body.spotify_link != null) {
+    res.song.spotify_link = req.body.spotify_link
   }
   // !** needs work **!
-  if (req.body.links.apple_music != null) {
-    res.song.links.apple_music = req.body.links.apple_music
+  if (req.body.apple_music_link != null) {
+    res.song.apple_music_link = req.body.apple_music_link
   }
 
   try {
